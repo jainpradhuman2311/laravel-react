@@ -97,4 +97,11 @@ docker exec -it laravel_backend php artisan db:seed
 
 ---
 
+## Default Login Credentials
+
+- **Email/Username:** admin@example.com
+- **Password:** password
+
+Use these credentials to log in to the React frontend after setup. It is recommended to change the password after your first login.
+
 For any issues, please open an issue or contact the maintainer.
