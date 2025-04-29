@@ -23,7 +23,7 @@ class PasswordController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'Validation failed',
-                'errors' => $validator->errors()
+                'errors' => $validator->errors()->first()
             ], 422);
         }
 
@@ -33,7 +33,8 @@ class PasswordController extends Controller
         if (!Hash::check($request->current_password, $user->password)) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Current password is incorrect'
+                'message' => 'Current password is incorrect',
+                'errors' => 'Current password is incorrect'
             ], 401);
         }
 

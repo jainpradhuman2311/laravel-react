@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import Header from './components/Header/Header'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import AccountSettings from './components/AccountSettings/AccountSettings'
+import Login from './components/Login/Login'
 import Footer from './components/Footer/Footer'
 import './App.css'
+import PrivateRoute from './components/Privateroutes'
 
 function App() {
   const [userData] = useState({
@@ -29,9 +31,18 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
       <main className="main-content">
+        <Routes>
+          <Route path="/" element={localStorage.getItem('token') ? (
+        <Navigate to="/account-settings" replace />
+      ) : (
+        <Navigate to="/login" replace />
+      )} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/account-settings" element={  <PrivateRoute>
         <AccountSettings userData={userData} />
+      </PrivateRoute>} />
+        </Routes>
       </main>
       <Footer />
     </div>

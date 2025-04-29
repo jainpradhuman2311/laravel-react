@@ -1,7 +1,11 @@
 import { useState } from 'react'
 import { FaArrowLeft, FaCog, FaUser, FaUsers, FaListUl, FaCheck, FaEye, FaEyeSlash } from 'react-icons/fa'
 import Sidebar from './Sidebar'
+import Header from '../Header/Header'
 import './AccountSettings.css'
+import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import config from '../../config'
 
 const AccountSettings = ({ userData }) => {
   const [activeTab, setActiveTab] = useState('My Profile')
@@ -32,19 +36,45 @@ const AccountSettings = ({ userData }) => {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     // Handle password change logic here
-    setPasswordData({
-      currentPassword: '',
-      newPassword: '',
-      confirmPassword: ''
-    })
-    setShowPasswordForm(false)
+    try{
+      const response = await axios.post(`${config.API_URL}/change-password`,{
+        current_password: passwordData.currentPassword,
+        new_password: passwordData.newPassword,
+        new_password_confirmation: passwordData.confirmPassword
+      },{
+        headers:{
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      })
+      if(response.status === 200){
+        toast("Password changed successfully");
+        setShowPasswordForm(false)
+        setPasswordData({
+          currentPassword: '',
+          newPassword: '',
+          confirmPassword: ''
+        })
+        setShowPasswords({
+          current: false,
+          new: false,
+          confirm: false
+        })
+        
+      }
+    }catch(err){
+      toast(err?.response?.data?.errors || "Something went wrong");
+    }
   }
 
   return (
-    <div className="account-settings">
+    <>
+    <div>
+      <Header />
+      <div className="account-settings">
       <div className="back-link">
         <a href="#" className="back-btn">
           <FaArrowLeft /> <span>Back</span>
@@ -211,7 +241,10 @@ const AccountSettings = ({ userData }) => {
           </section>
         </div>
       </div>
+      </div>
     </div>
+    <ToastContainer/>
+    </>
   )
 }
 

@@ -18,5 +18,6 @@ EXPOSE 3000
 # Add host flag for Vite to work in Docker
 ENV VITE_DOCKER=true
 
+CMD ["npm", "install"]
 # Start the app in development mode
 CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
