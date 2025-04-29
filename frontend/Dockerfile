@@ -6,8 +6,8 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Make sure node_modules exists and has proper permissions
+RUN mkdir -p node_modules && chown -R node:node node_modules
 
 # Copy app files
 COPY . .
@@ -18,6 +18,5 @@ EXPOSE 3000
 # Add host flag for Vite to work in Docker
 ENV VITE_DOCKER=true
 
-CMD ["npm", "install"]
 # Start the app in development mode
 CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
