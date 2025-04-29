@@ -1,0 +1,332 @@
+.account-settings {
+  width: 100%;
+  padding: var(--space-5);
+}
+
+.back-link {
+  margin-bottom: var(--space-4);
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.back-btn:hover {
+  color: var(--color-primary);
+}
+
+.account-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.settings-icon {
+  color: var(--color-secondary);
+  font-size: 1.2rem;
+}
+
+.account-content {
+  display: flex;
+  gap: var(--space-5);
+}
+
+.profile-content {
+  flex: 1;
+}
+
+.profile-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--space-5);
+}
+
+.profile-section {
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  margin-bottom: var(--space-5);
+  display: flex;
+  align-items: flex-start;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  font-weight: 900;
+  margin-bottom: var(--space-4);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  /* justify-content: space-between; */
+  width: 40%;
+  padding-top: 10px;
+}
+
+.settings-gear {
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.personal-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: 100%;
+  padding: 40px;
+  border: 1px solid var(--color-light);
+}
+
+.avatar-container {
+  flex-shrink: 0;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-edit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.info-field {
+  margin-bottom: var(--space-3);
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-light);
+}
+
+.info-field:last-child {
+  margin-bottom: var(--space-3);
+  padding-bottom: 20px;
+  border-bottom: unset;
+}
+
+
+.info-field label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-1);
+  font-weight: 600;
+}
+
+.info-field p {
+  font-size: 0.95rem;
+  color: var(--color-primary);
+}
+
+.security-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 40px;
+  border: 1px solid var(--color-light);
+}
+
+.password-field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.password-field label {
+  font-size: 0.95rem;
+  color: var(--color-primary);
+}
+
+.password-dots {
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.password-form {
+  width: 100%;
+}
+
+.password-input-group {
+  margin-bottom: var(--space-4);
+}
+
+.password-input-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  padding-right: 40px;
+}
+
+.password-input-wrapper input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.toggle-password {
+  position: absolute;
+  right: var(--space-3);
+  background: none;
+  border: none;
+  color: var(--color-secondary);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-4);
+}
+
+.change-password-btn {
+  padding: var(--space-2) var(--space-4);
+  background-color: transparent;
+  color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-sm);
+  border:0.5px solid var(--color-primary);
+  /* color: white; */
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.change-password-btn:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.permissions-section {
+  margin-bottom: var(--space-5);
+  /* padding-bottom: 20px; */
+  border-bottom: 1px solid var(--color-light);
+  width: 100%;
+}
+
+.accountt-wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid var(--color-light);
+  padding: 40px;
+  /* gap: var(--space-8); */
+}
+
+.account-name {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: var(--space-3);
+}
+
+.role-container {
+  margin-bottom: var(--space-3);
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.role-title {
+  font-size: 0.9rem;
+  margin-bottom: var(--space-2);
+  flex: 1;
+}
+
+.permissions-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-left: var(--space-4);
+  flex: 1;
+}
+
+.permission-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.9rem;
+}
+
+.check-icon {
+  color: var(--color-success);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 992px) {
+  .account-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .account-settings {
+    padding: var(--space-3);
+  }
+  
+  .personal-details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .security-section {
+    flex-direction: column;
+    gap: var(--space-3);
+    align-items: flex-start;
+  }
+  
+  .profile-section {
+    padding: var(--space-4);
+  }
+}
